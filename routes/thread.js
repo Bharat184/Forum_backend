@@ -7,8 +7,8 @@ const Comment=require('../models/Comment')
 
 
 router.post('/create',fetchUser,[
-    body('title','minimum 5 characters').isLength({min:5}),
-    body('description','minimun 15 characters').isLength({min:15})
+    body('title','title should be  5 characters long').isLength({min:5}),
+    body('description','description should be  10 characters long').isLength({min:10})
 ],(req,res)=>{
    let errors=validationResult(req);
    if(!errors.isEmpty())

@@ -19,7 +19,7 @@ router.post('/verify', (req, res) => {
 router.post('/createuser', [
     body('name', 'Name should be of minimum 3 characters').isLength({ min: 3 }),
     body('email', "Enter a valid email").isEmail(),
-    body('password', "Password minimum character should be 8").isLength({ min: 8 }),
+    body('password', "Password minimum character should be 2").isLength({ min: 2 }),
 ], async (req, res) => {
 
     const errors = validationResult(req);
