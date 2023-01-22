@@ -4,8 +4,8 @@ const Category=require("../models/Category")
 const {body,validationResult}=require('express-validator');
 
 router.post('/add',[
-    body('name','minimum 1 characters').isLength({min:1}),
-    body('description','minimum 10 characters').isLength({min:10})
+    body('name','name cannot be empty').exists(),
+    body('description','description cannot be empty').exists()
 ],async (req,res)=>{
     const error=validationResult(req);
     if(!error.isEmpty())

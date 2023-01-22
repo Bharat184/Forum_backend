@@ -21,7 +21,7 @@ router.post('/post',fetchUser,[
         });
         if(user)
         {
-            res.json({"success":"true","result":"Comment Posted"})
+            res.json({"success":"true","result":"Comment Posted",comment:user})
         }
     } catch (error) {
         res.status(500).send("Internal Server Error");
